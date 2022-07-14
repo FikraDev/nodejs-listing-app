@@ -1,0 +1,58 @@
+html,
+body {
+  background-color: #0b0c0d;
+  color: #c1c2c2;
+  font-family: "Slabo 13px", serif;
+  height: 100%;
+}
+
+.hdr {
+  color: #fd7014;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.hdr-icons {
+  color: #fd7014;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.navLinkx {
+  color: #c1c2c2;
+  font-size: 20px;
+}
+
+.navLinkx:hover {
+  color: #c1c2c2;
+}
+
+img {
+  border-radius: 4%;
+}
+
+.spantxt {
+  color: #fd7014;
+}
+
+.vl {
+  border-left: 6px solid green;
+  height: 100%;
+}
+
+p {
+  font-size: 20px;
+  padding-left: 10px;
+}
+
+label{
+  font-size: 18px;
+}
+
+.spn1{
+  color: green;
+}
+
+.spn2{
+  color: gold;
+}
