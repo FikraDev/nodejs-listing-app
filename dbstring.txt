@@ -1,0 +1,1 @@
+mongodb://root:qrtyac11@10.100.0.10:27017/?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false

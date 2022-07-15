@@ -1,4 +1,5 @@
 const express = require('express');
+const Proplist = require('../model/listing')
 
 const router  = express.Router();
 
@@ -11,7 +12,11 @@ router.get('/',(req, res)=>{
 })
 
 router.get('/all-listings', (req, res)=>{
-    res.render('all-listings', {title:'Yaad Listing | All'})
+    Proplist.find()
+    .then((result)=>{
+        res.render('all-listings', {title:'Yaad Listing | All', home: result})
+    })
+    .catch((err) => { console.log(err)});
 })
 
 router.get('/details', (req, res)=>{
