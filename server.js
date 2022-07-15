@@ -6,6 +6,14 @@ require("dotenv").config();
 //initialize app
 const app = express();
 
+//for static files
+app.use(express.static("public"));
+app.use(express.json());
+app.use(express.urlencoded({
+extended:true
+}));
+app.use(listingroutes); //must always be placed last
+
 //read in .env data
 PORT = process.env.PORT;
 DBCREDS = process.env.DB_CREDS
@@ -21,9 +29,8 @@ mongoose.connect(dbUrl, { useNewUrlParser:true, useUnifiedTopology: true })
 app.set("view engine", "ejs");
 app.set("views", "views");
 
-//for static files
-app.use(express.static("public"));
-app.use(listingroutes);
+
+
 
 
 

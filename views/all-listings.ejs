@@ -9,6 +9,11 @@
                     <th class="fw-bold">Parish</th>
                     <th class="fw-bold">City</th>
                     <th class="fw-bold">Address</th>
+                    <th class="fw-bold">Bedrooms</th>
+                    <th class="fw-bold">Bathrooms</th>
+                    <th class="fw-bold">Size</th>
+                    <th class="fw-bold">Price</th>
+                    <th class="fw-bold">Status</th>
                 </tr>
                 <% home.forEach(h=> { %>
 
@@ -22,6 +27,11 @@
                         <td>
                             <%= h.address %>
                         </td>
+                        <td class="text-center"><%= h.bed_rooms %></td>
+                        <td class="text-center"><%= h.bath_rooms %></td>
+                        <td><%= `${h.sqr_ft} sq ft` %></td>
+                        <td><%= `$${h.price}.00` %></td>
+                        <td><%= h.status %></td>
                     </tr>
             
 
