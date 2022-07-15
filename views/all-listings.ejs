@@ -1,0 +1,36 @@
+<%- include('../views/partials/header.ejs') %>
+
+
+
+    <div>
+        <% if(home.length> 0) { %>
+            <table class="w-75">
+                <tr>
+                    <th class="fw-bold">Parish</th>
+                    <th class="fw-bold">City</th>
+                    <th class="fw-bold">Address</th>
+                </tr>
+                <% home.forEach(h=> { %>
+
+                    <tr>
+                        <td>
+                            <%= h.parish %>
+                        </td>
+                        <td>
+                            <%= h.city %>
+                        </td>
+                        <td>
+                            <%= h.address %>
+                        </td>
+                    </tr>
+            
+
+            <% }) %>
+        </table>
+                <% } %>
+    </div>
+
+
+
+
+    <%- include('../views/partials/footer.ejs') %>

@@ -56,3 +56,10 @@ label{
 .spn2{
   color: gold;
 }
+
+table, th, td{
+  border: 1px solid white;
+  
+}
+
+
