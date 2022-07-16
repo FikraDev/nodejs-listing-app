@@ -16,7 +16,7 @@ router.get('/',(req, res)=>{
 router.get('/all-listings', (req, res)=>{
     Proplist.find()
     .then((result)=>{
-        res.render('all-listings', {title:'Yaad Listing | All', home: result})
+        res.render('all-listings', {title:'Yaad Listing | All-Listings', home: result})
     })
     .catch((err) => { console.log(err)});
 })

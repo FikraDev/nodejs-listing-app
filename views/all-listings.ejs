@@ -1,46 +1,60 @@
 <%- include('../views/partials/header.ejs') %>
 
+<div class="container-fluid ">
+    <div class="row">
+        <div class="col">
 
+            <div class="text-center my-xl-5">
+                <h2>All Listings</h2>
+            </div>
 
-    <div>
-        <% if(home.length> 0) { %>
-            <table class="w-75">
-                <tr>
-                    <th class="fw-bold">Parish</th>
-                    <th class="fw-bold">City</th>
-                    <th class="fw-bold">Address</th>
-                    <th class="fw-bold">Bedrooms</th>
-                    <th class="fw-bold">Bathrooms</th>
-                    <th class="fw-bold">Size</th>
-                    <th class="fw-bold">Price</th>
-                    <th class="fw-bold">Status</th>
-                </tr>
-                <% home.forEach(h=> { %>
+            <div class="mt-xl-5">
+                <% if(home.length> 0) { %>
+                    <table class="w-100">
+                        <tr>
+                            <th class="fw-bold">Parish</th>
+                            <th class="fw-bold">City</th>
+                            <th class="fw-bold">Address</th>
+                            <th class="fw-bold">Bedrooms</th>
+                            <th class="fw-bold">Bathrooms</th>
+                            <th class="fw-bold">Size</th>
+                            <th class="fw-bold">Price</th>
+                            <th class="fw-bold">Status</th>
+                            <th class="fw-bold">View</th>
+                            <th class="fw-bold">Delete</th>
+                        </tr>
+                        <% home.forEach(h=> { %>
+        
+                            <tr>
+                                <td>
+                                    <%= h.parish %>
+                                </td>
+                                <td>
+                                    <%= h.city %>
+                                </td>
+                                <td>
+                                    <%= h.address %>
+                                </td>
+                                <td class="text-center"><%= h.bed_rooms %></td>
+                                <td class="text-center"><%= h.bath_rooms %></td>
+                                <td><%= `${h.sqr_ft} sq ft` %></td>
+                                <td><%= `$${h.price}.00` %></td>
+                                <td><%= h.status %></td>
+                                <td><a href="" class="fw-bold text-primary">View</a></td>
+                                <td><a href="#" class="fw-bold text-danger">Delete</a></td>
+                            </tr>
+                    
+        
+                    <% }) %>
+                </table>
+                        <% } %>
+            </div>
 
-                    <tr>
-                        <td>
-                            <%= h.parish %>
-                        </td>
-                        <td>
-                            <%= h.city %>
-                        </td>
-                        <td>
-                            <%= h.address %>
-                        </td>
-                        <td class="text-center"><%= h.bed_rooms %></td>
-                        <td class="text-center"><%= h.bath_rooms %></td>
-                        <td><%= `${h.sqr_ft} sq ft` %></td>
-                        <td><%= `$${h.price}.00` %></td>
-                        <td><%= h.status %></td>
-                    </tr>
-            
-
-            <% }) %>
-        </table>
-                <% } %>
+        </div>
     </div>
+</div>
 
 
 
 
-    <%- include('../views/partials/footer.ejs') %>
+<%- include('../views/partials/footer.ejs') %>
