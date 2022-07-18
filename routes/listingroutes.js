@@ -3,10 +3,6 @@ const Proplist = require('../model/listing')
 
 const router  = express.Router();
 
-
-
-//ALl ROUTES
-
 //Get Routes
 
 router.get('/',(req, res)=>{
@@ -42,6 +38,20 @@ router.post('/add-listing', async (req, res)=>{
         console.log(err)
     })  
 });
+
+router.post("/details/:id", (req, res)=>{
+    const id = req.params.id;
+    console.log(id)
+
+    Proplist.findById(id)
+    .then((result)=>{
+        
+        res.render('details', {home:result, title:'Yaad | Details Page'})
+    })
+    .catch((err)=>{
+        console.log(err)
+    })
+})
 
 
 //export routes
