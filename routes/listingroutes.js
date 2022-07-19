@@ -25,6 +25,20 @@ router.get('/add-listing', (req, res)=>{
     res.render('add-listing', {title:'Yaad Listing | Add a Listing'})
 })
 
+router.get("/details/:id", (req, res)=>{
+    const id = req.params.id;
+
+    Proplist.findById(id)
+    .then((result)=>{
+        console.log(result)
+        res.render('details', {result, title:'Yaad | Details Page'})
+    })
+
+    .catch((err)=>{
+        console.log(err)
+    })
+})
+
 //Post Routes
 
 router.post('/add-listing', async (req, res)=>{
@@ -39,19 +53,7 @@ router.post('/add-listing', async (req, res)=>{
     })  
 });
 
-router.post("/details/:id", (req, res)=>{
-    const id = req.params.id;
-    console.log(id)
 
-    Proplist.findById(id)
-    .then((result)=>{
-        
-        res.render('details', {home:result, title:'Yaad | Details Page'})
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-})
 
 
 //export routes
