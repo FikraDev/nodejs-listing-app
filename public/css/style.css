@@ -62,4 +62,8 @@ table, th, td{
   
 }
 
+textarea {
+  resize: none;
+}
+
 

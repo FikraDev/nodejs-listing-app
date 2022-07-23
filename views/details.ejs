@@ -3,14 +3,48 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                
-                    <p>
-                        <%= result.address %>
-                    </p>
-                    <p>
-                        <%= result.price %>
-                    </p>
-                   
+
+                <div>
+                    <table class="w-50">
+                        <tr>
+                            <th>Location</th>
+                            <td>
+                                <%= result.address %>, <%= result.city %>, <%= result.parish %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Bedrooms/Bathrooms</th>
+                            <td>
+                                <%= `${result.bed_rooms} Bed` %> | <%= `${result.bath_rooms} Bath` %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Price</th>
+                            <td>
+                                <%= `$${result.price}.00` %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Status</th>
+                            <td>
+                                <%= result.status %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <th>Description</th>
+                            <td>
+                                <%= result.description %>
+                            </td>
+                        </tr>
+
+
+
+                    </table>
+                </div>
+
             </div>
         </div>
     </div>

@@ -10,7 +10,8 @@ const listschema = new Schema({
     bed_rooms: Number,
     bath_rooms: Number,
     price: Number,
-    status: String
+    status: String,
+    description: String
     
 });
 
