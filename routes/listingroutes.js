@@ -37,18 +37,6 @@ router.get("/details/:id", (req, res)=>{
     })
 })
 
-router.get("/parish/:parish", (req, res)=>{
-    const location = req.params.parish;
-
-    Proplist.find(location)
-    .then((result)=>{
-        console.log(result)
-        // res.render('parish', {home:result, title:'Yaad | By-Location'})
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
-})
 
 //Post Routes
 
