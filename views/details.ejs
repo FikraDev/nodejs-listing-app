@@ -38,15 +38,31 @@
                             <td>
                                 <%= result.description %>
                             </td>
-                        </tr>
-
-
-
+                        </tr>               
                     </table>
+                    <div class="mt-3">
+                        <a class="delete text-danger fw-bold" data-doc="<%= result._id %>"><button class="btn-danger">Delete</button></a>
+                       <h2><%= result._id.toString() %></h2>
+                    </div>
                 </div>
 
             </div>
         </div>
     </div>
+
+    <script async>
+        const remove_entry = document.querySelector('a.delete');
+
+        remove_entry.addEventListener('click', (e) => {
+            const endpoint = `/home/${remove_entry.dataset.doc}`;
+    
+            fetch('endpoint', { method: "DELETE" })
+            .then((response) => response.json)
+            .then((data) => window.location.href = data.redirect)
+            .catch((err) => console.log(err))
+        })
+    </script>
+
+
 
     <%- include('../views/partials/footer.ejs') %>
